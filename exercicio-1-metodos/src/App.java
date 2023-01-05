@@ -16,6 +16,10 @@ public class App {
 
        System.out.println("Exercicio Emprestimo.");
 
+       Emprestimo.calcular(1000, 2);
+       Emprestimo.calcular(1000, Emprestimo.getTresParcelas());
+       Emprestimo.calcular(1000, 5);
+
        
     }
 
