@@ -1,13 +1,35 @@
 public class Car {
-  static String name = "Gol";
-  static String color = "Prata";
-  static int tankCapacity = 45;
-    
-  public static void carInfo() {
-    System.out.println("O nome do carro e " + name + " a cor e " + color + " e tem capacidade para " + tankCapacity + " litros de combustivel.");
+  String model;
+  String color;
+  int tankCapacity;
+
+  void setColor(String color) {
+    this.color = color;
   }
 
-  public static double valueToFillTheTank(double literValue) {
+  String getColor() {
+    return color;
+  }
+
+  void setModel(String model) {
+    this.model = model;
+  }
+
+  String getModel() {
+    return model;
+  }
+
+  void setTankCapacity(int tankCapacity) {
+    this.tankCapacity = tankCapacity;
+  }
+
+  int getTankCapacity() {
+    return tankCapacity;
+  }
+    
+ 
+
+  double valueToFillTheTank(double literValue, int tankCapacity) {
  
     return (double) (literValue * tankCapacity);
     
