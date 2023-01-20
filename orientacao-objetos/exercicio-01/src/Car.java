@@ -3,6 +3,14 @@ public class Car {
   String color;
   int tankCapacity;
 
+ Car() {}
+
+  Car(String model, String color, int tankCapacity) {
+    this.model = model;
+    this.color = color;
+    this.tankCapacity = tankCapacity;
+  }
+
   void setColor(String color) {
     this.color = color;
   }
@@ -29,7 +37,7 @@ public class Car {
     
  
 
-  double valueToFillTheTank(double literValue, int tankCapacity) {
+  double valueToFillTheTank(double literValue) {
  
     return (double) (literValue * tankCapacity);
     
