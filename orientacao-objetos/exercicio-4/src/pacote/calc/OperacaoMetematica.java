@@ -1,4 +1,4 @@
-package pacote;
+package pacote.calc;
 
 interface OperacaoMetematica {
 
