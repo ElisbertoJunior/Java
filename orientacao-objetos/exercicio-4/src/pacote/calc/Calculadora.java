@@ -1,3 +1,5 @@
+package pacote.calc;
+
 class Calculadora implements OperacaoMetematica {
   
   @Override

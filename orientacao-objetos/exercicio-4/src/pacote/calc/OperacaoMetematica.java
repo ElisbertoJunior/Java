@@ -1,3 +1,5 @@
+package pacote;
+
 interface OperacaoMetematica {
 
   void soma(double operando1, double operando2);
