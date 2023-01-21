@@ -13,4 +13,5 @@ public class App {
         Vendedor vendedor_ = (Vendedor) new Funcionario();
 
     }
+    
 }
