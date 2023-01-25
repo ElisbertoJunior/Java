@@ -68,8 +68,49 @@ public class Main {
             Double next = iterator.next();
             soma += next;
         }
-
         System.out.println("A soma das notas e igual a: " + soma);
 
+        System.out.println("Exiba a media das notas: " + (soma / notas.size()));
+
+        notas.remove(8.0);
+        System.out.println("Revido o item 8.0 " + notas);
+
+        notas.remove(0);
+        System.out.println("Removido o primeiro item da lista " + notas);
+
+        System.out.println("Remova as notas menores que 7 e exiba a lista: ");
+        Iterator<Double> iterator1 = notas.iterator();
+        while (iterator1.hasNext()) {
+            Double next = iterator1.next();
+            if (next < 7) iterator1.remove();
+
+        }
+
+        System.out.println("Notas menores do que 7 removidas " + notas);
+
+
+        System.out.println("Apague todos o itens da lista: " + notas);
+        //notas.clear();
+        System.out.println("A lista esta vazia ? " + notas.isEmpty());
+
+        /*
+            EXERCICIO 3
+         */
+
+        List<Double> notas2 = new LinkedList<>();
+        Iterator<Double> iterator2 = notas.iterator();
+        while (iterator2.hasNext()) {
+            Double next = iterator2.next();
+            notas2.add(next);
+
+        }
+
+        System.out.println(notas2);
+
+        System.out.println("Mostre a primeira nota da lista: " + notas2.get(0));
+        System.out.println("Mostre a primeira nota da lista removendo-a: " + notas2.remove(0));
+
+        System.out.println(notas2);
     }
+
 }
