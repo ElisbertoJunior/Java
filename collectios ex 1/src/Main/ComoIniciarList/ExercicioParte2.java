@@ -4,6 +4,7 @@ package Main.ComoIniciarList;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class ExercicioParte2 {
@@ -27,7 +28,17 @@ public class ExercicioParte2 {
         System.out.println(myCats);
 
         System.out.println("--\tOrdem Idade\t---");
+        Collections.sort(myCats, new ComparatorAge());
+        //myCats.sort(new ComparatorAge());
+        System.out.println(myCats);
 
+        System.out.println("--\tOrdem de Cor\t---");
+        Collections.sort(myCats, new ComparatorColor());
+        System.out.println(myCats);
+
+        System.out.println("--\tOrdem Nome/Cor/Idade\t---");
+        Collections.sort(myCats, new ComparatorNameColorAge());
+        System.out.println(myCats);
     }
 
 }
@@ -71,6 +82,36 @@ class Cat implements Comparable<Cat>{
         return this.getName().compareToIgnoreCase(cat.getName());
     }
 
+}
+
+class ComparatorAge implements Comparator<Cat> {
+    @Override
+    public int compare(Cat c1, Cat c2) {
+        return Integer.compare(c1.getAge(), c2.getAge());
+    }
+
+}
+
+class ComparatorColor implements Comparator<Cat> {
+    @Override
+    public int compare(Cat c1, Cat c2) {
+        return c1.getColor().compareToIgnoreCase(c2.getColor());
+    }
+
+}
+
+class ComparatorNameColorAge implements Comparator<Cat> {
+    @Override
+    public int compare(Cat c1, Cat c2) {
+        int name = c1.getName().compareToIgnoreCase(c2.getName());
+        if (name != 0) return name;
+
+        int color = c1.getColor().compareToIgnoreCase(c2.getColor());
+        if (color != 0) return color;
+
+        return Integer.compare(c1.getAge(), c2.getAge());
+
+    }
 }
 
 
