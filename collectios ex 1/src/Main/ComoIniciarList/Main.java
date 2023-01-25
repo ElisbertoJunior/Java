@@ -1,8 +1,7 @@
 package Main.ComoIniciarList;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,10 +13,12 @@ public class Main {
             notas.add(1d);
 
             //Exemplo ja adicionando valores
+
             List<Double> notas3 = new ArrayList<>(Arrays.asList(7d, 8.5, 9.3, 5d, 7d, 0d, 3.6));
             List<Double> notas4 = Arrays.asList(7d, 8.5, 9.3, 5d, 7d, 0d, 3.6);
 
             //Lista imutavel na lista imutael uasamos "Lista.of"
+
             List<Double> notas5 = List.of(7d, 8.5, 9.3, 5d, 7d, 0d, 3.6);
             //notas5.add(5d); operacao nao sera reizada pois notas5 e imutavel
 
@@ -49,6 +50,26 @@ public class Main {
         System.out.println("Exiba todas as notas na oredem em que foram informados: ");
         for (Double nota : notas) System.out.println(nota);
 
+        /*
+            PARTE 2
+         */
+
+        System.out.println("Exiba a terceira nota adicionada: " + notas.get(2));
+        System.out.println(notas.toString());
+
+        System.out.println("Exiba a menor nota: " + Collections.min(notas));
+
+        System.out.println("Exiba a maior nota: " + Collections.max(notas));
+
+        System.out.println("Exiba a soma das notas: ");
+        Iterator<Double> iterator = notas.iterator();
+        Double soma = 0d;
+        while (iterator.hasNext()){
+            Double next = iterator.next();
+            soma += next;
+        }
+
+        System.out.println("A soma das notas e igual a: " + soma);
 
     }
 }
