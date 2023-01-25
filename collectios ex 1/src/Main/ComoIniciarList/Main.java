@@ -27,6 +27,28 @@ public class Main {
         System.out.println("Crie um alista e adicione 7 notas.");
 
         List<Double> notas = new ArrayList<>();
+        notas.add(7.0);
+        notas.add(7.3);
+        notas.add(7.4);
+        notas.add(8.1);
+        notas.add(9.0);
+
+        System.out.println(notas.toString());
+        System.out.println("Exiba a posicao da nota 7.3 " + notas.indexOf(7.4));
+        System.out.println("Adiciona na lista a nota 8.0 na posicao 4: " );
+
+        notas.add(4, 8.0);
+        System.out.println(notas);
+
+        System.out.println("Substitua a nota 5 pela nota 7: ");
+        notas.set(notas.indexOf(7.3), 6.0);
+        System.out.println(notas);
+
+        System.out.println("Confira se a nota 7.3 esta na lista: " + notas.contains(7.3));
+
+        System.out.println("Exiba todas as notas na oredem em que foram informados: ");
+        for (Double nota : notas) System.out.println(nota);
+
 
     }
 }
