@@ -39,6 +39,7 @@ public class ExercicioParte2 {
         System.out.println("--\tOrdem Nome/Cor/Idade\t---");
         Collections.sort(myCats, new ComparatorNameColorAge());
         System.out.println(myCats);
+
     }
 
 }
@@ -106,12 +107,15 @@ class ComparatorNameColorAge implements Comparator<Cat> {
         int name = c1.getName().compareToIgnoreCase(c2.getName());
         if (name != 0) return name;
 
+
         int color = c1.getColor().compareToIgnoreCase(c2.getColor());
         if (color != 0) return color;
 
         return Integer.compare(c1.getAge(), c2.getAge());
 
     }
+
+
 }
 
 
