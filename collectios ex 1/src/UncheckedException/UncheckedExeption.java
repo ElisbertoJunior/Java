@@ -1,3 +1,4 @@
+
 package UncheckedException;
 
 import javax.swing.*;
@@ -17,9 +18,12 @@ public class UncheckedExeption {
             JOptionPane.showMessageDialog(null, "Entarda invalida informe um numero inteiro! " + e.getMessage());
             //e.printStackTrace();
 
+        } catch (ArithmeticException e) {
+            JOptionPane.showMessageDialog(null, "Impossivel dividir um numero");
         } finally {
             System.out.println("Chegou no finally!");
         }
+
 
         System.out.println("O codigo continua...");
 
