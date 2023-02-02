@@ -19,7 +19,7 @@ public class UncheckedExeption {
             //e.printStackTrace();
 
         } catch (ArithmeticException e) {
-            JOptionPane.showMessageDialog(null, "Impossivel dividir um numero");
+            JOptionPane.showMessageDialog(null, "Impossivel dividir um numero por 0");
         } finally {
             System.out.println("Chegou no finally!");
         }
