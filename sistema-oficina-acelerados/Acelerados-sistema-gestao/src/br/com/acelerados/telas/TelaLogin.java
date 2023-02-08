@@ -9,17 +9,16 @@ import java.sql.*;
 import br.com.acelerados.dal.ModuloConexao;
 import javax.swing.JOptionPane;
 
-
 /**
  *
  * @author elisb
  */
 public class TelaLogin extends javax.swing.JFrame {
-    
+
     Connection conexao = null;
     PreparedStatement pst = null;
     ResultSet rs = null;
-    
+
     public void logar() {
         String sql = "select * from dbusers where login=? and senha=?";
         try {
@@ -32,14 +31,16 @@ public class TelaLogin extends javax.swing.JFrame {
             //a linha abaixo executa a query
             rs = pst.executeQuery();
             //se existir usuario e senha correspondente
-            if(rs.next()){
-                TelaPrincipal principal = new TelaPrincipal();  
+            if (rs.next()) {
+                TelaPrincipal principal = new TelaPrincipal();
                 principal.setVisible(true);
-            } else
-                JOptionPane.showMessageDialog(null, "Usuario e/ou senha invalido(a)");  
-             
-            
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuario e/ou senha invalido(a)");
+            }
+
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+
         }
     }
 
@@ -49,12 +50,12 @@ public class TelaLogin extends javax.swing.JFrame {
     public TelaLogin() {
         initComponents();
         conexao = ModuloConexao.conector();
-        if (conexao != null)
+        if (conexao != null) {
             lblStatus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acelerados/icones/database_icon_on.png")));
-            
-        else
+        } else {
             lblStatus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acelerados/icones/database_icon_off.png")));
-        
+        }
+
     }
 
     /**
@@ -104,6 +105,11 @@ public class TelaLogin extends javax.swing.JFrame {
         btnLogin.setBackground(new java.awt.Color(153, 204, 255));
         btnLogin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnLogin.setText("Login");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
 
         txtSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,6 +170,11 @@ public class TelaLogin extends javax.swing.JFrame {
     private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSenhaActionPerformed
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        // chamando o metodo logar
+        logar();
+    }//GEN-LAST:event_btnLoginActionPerformed
 
     /**
      * @param args the command line arguments
