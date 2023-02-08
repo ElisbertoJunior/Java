@@ -14,16 +14,16 @@ import java.sql.*;
 public class ModuloConexao {
     //metodo responsavel por estabelecer a conexao com o banco
     public static Connection conector() {
-        java.sql.Connection conexao = null;
+        Connection conexao = null;
         //a linha baixo chama o driver
-        String driver = "com.mysql.jdbc.Driver";
+        String driver = "com.mysql.cj.jdbc.Driver";
         // Armazenado informacoes referente ao banco
         String url = "jdbc:mysql://localhost:3306/dbacelerados";
         String user = "root";
         String password = "";
         // estabelecendo a conexao com o banco
         try {
-            //Class.forName(driver);
+            Class.forName(driver);
             conexao = DriverManager.getConnection(url, user, password);
             return conexao;
         } catch (Exception e) {
