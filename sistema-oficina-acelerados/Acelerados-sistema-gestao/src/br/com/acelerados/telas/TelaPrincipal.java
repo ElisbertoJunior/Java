@@ -107,11 +107,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         MenCadUsu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.ALT_MASK));
         MenCadUsu.setText("Usuários");
+        MenCadUsu.setEnabled(false);
         MenCad.add(MenCadUsu);
 
         Menu.add(MenCad);
 
         MenRelSer.setText("Relatorio");
+        MenRelSer.setEnabled(false);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem4.setText("Serviços");
@@ -261,10 +263,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu MenCad;
     private javax.swing.JMenuItem MenCadCli;
     private javax.swing.JMenuItem MenCadOs;
-    private javax.swing.JMenuItem MenCadUsu;
+    public static javax.swing.JMenuItem MenCadUsu;
     private javax.swing.JMenu MenOpc;
     private javax.swing.JMenuItem MenOpcSai;
-    private javax.swing.JMenu MenRelSer;
+    public static javax.swing.JMenu MenRelSer;
     private javax.swing.JMenuBar Menu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
