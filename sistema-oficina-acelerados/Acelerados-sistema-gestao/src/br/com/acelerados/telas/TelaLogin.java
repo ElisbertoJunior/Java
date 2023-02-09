@@ -33,6 +33,10 @@ public class TelaLogin extends javax.swing.JFrame {
             rs = pst.executeQuery();
             //se existir usuario e senha correspondente
             if (rs.next()) {
+                //a linha abaixo obtem o conteudo do campo perfil da tabela dbusers
+                String perfil = rs.getString(6);
+                System.out.println(perfil);
+                
                 TelaPrincipal principal = new TelaPrincipal();
                 principal.setVisible(true);
                 this.dispose();
