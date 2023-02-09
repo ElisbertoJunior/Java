@@ -43,8 +43,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         MenCad = new javax.swing.JMenu();
         MenCadCli = new javax.swing.JMenuItem();
         MenCadOs = new javax.swing.JMenuItem();
-        MenCadUsu = new javax.swing.JMenuItem();
-        MenRelSer = new javax.swing.JMenu();
+        menCadUsu = new javax.swing.JMenuItem();
+        menRel = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         MenAju = new javax.swing.JMenu();
         MenAjuSob = new javax.swing.JMenuItem();
@@ -84,7 +84,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acelerados/icones/logo.png"))); // NOI18N
 
-        lblUsuario.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblUsuario.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblUsuario.setText("Usuário");
 
         lblData.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -105,21 +105,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         MenCad.add(MenCadOs);
 
-        MenCadUsu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.ALT_MASK));
-        MenCadUsu.setText("Usuários");
-        MenCadUsu.setEnabled(false);
-        MenCad.add(MenCadUsu);
+        menCadUsu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.ALT_MASK));
+        menCadUsu.setText("Usuários");
+        menCadUsu.setEnabled(false);
+        MenCad.add(menCadUsu);
 
         Menu.add(MenCad);
 
-        MenRelSer.setText("Relatorio");
-        MenRelSer.setEnabled(false);
+        menRel.setText("Relatorio");
+        menRel.setEnabled(false);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem4.setText("Serviços");
-        MenRelSer.add(jMenuItem4);
+        menRel.add(jMenuItem4);
 
-        Menu.add(MenRelSer);
+        Menu.add(menRel);
 
         MenAju.setText("Ajuda");
 
@@ -183,7 +183,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(lblData)
                 .addGap(48, 48, 48)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Desktop)
@@ -263,16 +263,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu MenCad;
     private javax.swing.JMenuItem MenCadCli;
     private javax.swing.JMenuItem MenCadOs;
-    public static javax.swing.JMenuItem MenCadUsu;
     private javax.swing.JMenu MenOpc;
     private javax.swing.JMenuItem MenOpcSai;
-    public static javax.swing.JMenu MenRelSer;
     private javax.swing.JMenuBar Menu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JLabel lblData;
-    private javax.swing.JLabel lblUsuario;
+    public static javax.swing.JLabel lblUsuario;
+    public static javax.swing.JMenuItem menCadUsu;
+    public static javax.swing.JMenu menRel;
     // End of variables declaration//GEN-END:variables
 }
