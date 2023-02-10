@@ -7,6 +7,7 @@ package br.com.acelerados.telas;
 
 import java.sql.*;
 import br.com.acelerados.dal.ModuloConexao;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
@@ -43,6 +44,7 @@ public class TelaLogin extends javax.swing.JFrame {
                     TelaPrincipal.menRel.setEnabled(true);
                     TelaPrincipal.menCadUsu.setEnabled(true);
                     TelaPrincipal.lblUsuario.setText(usuario);
+                    TelaPrincipal.lblUsuario.setForeground(Color.red);
                     this.dispose();
                     conexao.close();
                 } else {
