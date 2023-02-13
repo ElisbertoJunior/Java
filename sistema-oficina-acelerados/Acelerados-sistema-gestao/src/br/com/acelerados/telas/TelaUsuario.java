@@ -30,7 +30,7 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
             pst = conexao.prepareStatement(sql);
             pst.setString(1, txtUsuId.getText());
             rs = pst.executeQuery();
-            
+
             if (rs.next()) {
                 txtUsuNome.setText(rs.getString(2));
                 txtUsuFone.setText(rs.getString(3));
@@ -38,8 +38,14 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
                 txtUsuSenha.setText(rs.getString(5));
                 // a linha abaixo se refere ao combox
                 cboUsuPerfil.setSelectedItem(rs.getString(6));
-                
             } else {
+                JOptionPane.showMessageDialog(null, "Usuário não cadastrado");
+                //as linha baixo limpam os campos
+                txtUsuNome.setText(null);
+                txtUsuFone.setText(null);
+                txtUsuLogin.setText(null);
+                txtUsuSenha.setText(null);
+                cboUsuPerfil.setSelectedItem(null);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
