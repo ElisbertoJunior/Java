@@ -78,6 +78,9 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         txtCliEndereco.setText(tblClientes.getModel().getValueAt(setar, 2).toString());
         txtCliFone.setText(tblClientes.getModel().getValueAt(setar, 3).toString());
         txtCliEmail.setText(tblClientes.getModel().getValueAt(setar, 4).toString());
+        //a linha abaixo desabilita o botao adicionar
+        btnAdicionar.setEnabled(false);
+        
     }
     
     //metodo para alterar dados do cliente
@@ -104,11 +107,35 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                     txtCliEndereco.setText(null);
                     txtCliFone.setText(null);
                     txtCliEmail.setText(null);
+                    btnAdicionar.setEnabled(true);
                     
                 }
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
+        }
+    }
+    
+     public void remover(){
+        int confirma = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja remover este cliente?", "Atenção", JOptionPane.YES_NO_OPTION);
+        if (confirma == JOptionPane.YES_OPTION){
+            String sql = "delete from tbclientes where idcli=?";
+            try {
+                pst = conexao.prepareStatement(sql);
+                pst.setString(1, txtCliId.getText());
+                int apagado = pst.executeUpdate();
+                if(apagado > 0){
+                    JOptionPane.showMessageDialog(null, "Cliente removido com sucesso");
+                   txtCliNome.setText(null);
+                    txtCliEndereco.setText(null);
+                    txtCliFone.setText(null);
+                    txtCliEmail.setText(null);
+                    btnAdicionar.setEnabled(true);
+                }
+                
+            } catch (Exception e) {
+                 JOptionPane.showMessageDialog(null, e);
+            }
         }
     }
 
@@ -185,6 +212,11 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         });
 
         btnRemover.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acelerados/icones/delete.png"))); // NOI18N
+        btnRemover.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoverActionPerformed(evt);
+            }
+        });
 
         txtCliPesquisar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -255,9 +287,9 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(btnAdicionar)
-                                        .addGap(33, 33, 33)
+                                        .addGap(18, 18, 18)
                                         .addComponent(btnAlterar)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGap(26, 26, 26)
                                         .addComponent(btnRemover))
                                     .addComponent(txtCliEndereco, javax.swing.GroupLayout.DEFAULT_SIZE, 547, Short.MAX_VALUE)
                                     .addComponent(txtCliEmail)
@@ -342,6 +374,10 @@ public class TelaCliente extends javax.swing.JInternalFrame {
     private void txtCliIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCliIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCliIdActionPerformed
+
+    private void btnRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverActionPerformed
+        remover();
+    }//GEN-LAST:event_btnRemoverActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

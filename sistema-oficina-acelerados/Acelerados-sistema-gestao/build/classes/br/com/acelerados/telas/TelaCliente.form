@@ -87,9 +87,9 @@
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Component id="btnAdicionar" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="btnAlterar" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                       <Component id="btnRemover" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="txtCliEndereco" alignment="0" pref="547" max="32767" attributes="0"/>
@@ -232,6 +232,9 @@
           <Image iconType="3" name="/br/com/acelerados/icones/delete.png"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoverActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCliPesquisar">
       <Events>
