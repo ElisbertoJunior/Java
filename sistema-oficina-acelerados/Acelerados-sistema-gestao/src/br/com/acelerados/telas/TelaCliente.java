@@ -8,6 +8,7 @@ package br.com.acelerados.telas;
 import java.sql.*;
 import br.com.acelerados.dal.ModuloConexao;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import net.proteanit.sql.DbUtils;
 
 /**
@@ -43,10 +44,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                 int adicionado = pst.executeUpdate();
                 if (adicionado > 0) {
                     JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso");
-                    txtCliNome.setText(null);
-                    txtCliEndereco.setText(null);
-                    txtCliFone.setText(null);
-                    txtCliEmail.setText(null);
+                    limpar();
 
                 }
             }
@@ -103,10 +101,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                 int adicionado = pst.executeUpdate();
                 if (adicionado > 0) {
                     JOptionPane.showMessageDialog(null, "Dados do cliente aletrados com sucesso");
-                    txtCliNome.setText(null);
-                    txtCliEndereco.setText(null);
-                    txtCliFone.setText(null);
-                    txtCliEmail.setText(null);
+                    limpar();
                     btnAdicionar.setEnabled(true);
                     
                 }
@@ -116,7 +111,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         }
     }
     
-     public void remover(){
+     private void remover(){
         int confirma = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja remover este cliente?", "Atenção", JOptionPane.YES_NO_OPTION);
         if (confirma == JOptionPane.YES_OPTION){
             String sql = "delete from tbclientes where idcli=?";
@@ -126,10 +121,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                 int apagado = pst.executeUpdate();
                 if(apagado > 0){
                     JOptionPane.showMessageDialog(null, "Cliente removido com sucesso");
-                   txtCliNome.setText(null);
-                    txtCliEndereco.setText(null);
-                    txtCliFone.setText(null);
-                    txtCliEmail.setText(null);
+                    limpar();
                     btnAdicionar.setEnabled(true);
                 }
                 
@@ -138,6 +130,17 @@ public class TelaCliente extends javax.swing.JInternalFrame {
             }
         }
     }
+     
+     private void limpar(){
+           txtCliPesquisar.setText(null);
+           txtCliId.setText(null);
+           txtCliNome.setText(null);
+           txtCliEndereco.setText(null);
+           txtCliFone.setText(null);
+           txtCliEmail.setText(null);
+           ((DefaultTableModel) tblClientes.getModel()).setRowCount(0);
+     }
+     
 
     /**
      * This method is called from within the constructor to initialize the form.
