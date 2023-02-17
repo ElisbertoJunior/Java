@@ -9,8 +9,6 @@ import java.text.DateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
-
-
 /**
  *
  * @author elisb
@@ -59,6 +57,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        desktop.setMaximumSize(new java.awt.Dimension(1000, 900));
+        desktop.setName(""); // NOI18N
         desktop.setPreferredSize(new java.awt.Dimension(800, 550));
 
         javax.swing.GroupLayout desktopLayout = new javax.swing.GroupLayout(desktop);
@@ -194,16 +194,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void MenCadOsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenCadOsActionPerformed
-        // TODO add your handling code here:
+        // Chamando a tela os
+        TelaOS os = new TelaOS();
+        os.setVisible(true);
+        desktop.add(os);
+
     }//GEN-LAST:event_MenCadOsActionPerformed
 
     private void MenOpcSaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenOpcSaiActionPerformed
         // Exibe uma caixa de dialogo
-        int sair = JOptionPane.showConfirmDialog(null, "Tem carteza que deseja sair?","Atenção", JOptionPane.YES_NO_OPTION);
-        
-        if (sair == JOptionPane.YES_OPTION)
+        int sair = JOptionPane.showConfirmDialog(null, "Tem carteza que deseja sair?", "Atenção", JOptionPane.YES_NO_OPTION);
+
+        if (sair == JOptionPane.YES_OPTION) {
             System.exit(0);
-        
+        }
+
     }//GEN-LAST:event_MenOpcSaiActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
@@ -222,14 +227,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void menCadUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menCadUsuActionPerformed
         // as linhas abaixo vao abrir o form TelaUsuario dentro do desktop pane
-        TelaUsuario usuario  = new TelaUsuario();
+        TelaUsuario usuario = new TelaUsuario();
         usuario.setVisible(true);
         desktop.add(usuario);
     }//GEN-LAST:event_menCadUsuActionPerformed
 
     private void MenCadCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenCadCliActionPerformed
         // chamando a tela cliente
-        
+
         TelaCliente cliente = new TelaCliente();
         cliente.setVisible(true);
         desktop.add(cliente);

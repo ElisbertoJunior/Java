@@ -102,7 +102,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                 if (adicionado > 0) {
                     JOptionPane.showMessageDialog(null, "Dados do cliente aletrados com sucesso");
                     limpar();
-                    btnAdicionar.setEnabled(true);
+                       btnAdicionar.setEnabled(true);
                     
                 }
             }
@@ -187,8 +187,10 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(jTable1);
 
         setClosable(true);
+        setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
+        setTitle("Clientes");
 
         jLabel1.setText("*Campos obrigatorios");
 
