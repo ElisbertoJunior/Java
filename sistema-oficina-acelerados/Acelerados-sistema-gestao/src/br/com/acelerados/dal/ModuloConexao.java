@@ -18,8 +18,8 @@ public class ModuloConexao {
         //a linha baixo chama o driver
         String driver = "com.mysql.cj.jdbc.Driver";
         // Armazenado informacoes referente ao banco
-        String url = "jdbc:mysql://localhost:3306/dbacelerados";
-        String user = "root";
+        String url = "jdbc:mysql://localhost:3306/dbacelerados?characterEncoding=utf-8";
+        String user = "pma";
         String password = "";
         // estabelecendo a conexao com o banco
         try {
