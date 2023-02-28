@@ -199,7 +199,7 @@ public class TelaOS extends javax.swing.JInternalFrame {
                 HashMap filtro = new HashMap();
                 filtro.put("os", Integer.parseInt(txtOs.getText()));
                 //usando a classe jasperPrint
-            JasperPrint print = JasperFillManager.fillReport("C:/reports/os.jasper",filtro,conexao);
+           JasperPrint print = JasperFillManager.fillReport(getClass().getResourceAsStream("/reports/os.jasper"),filtro,conexao);
             
             JasperViewer.viewReport(print,false);
                       

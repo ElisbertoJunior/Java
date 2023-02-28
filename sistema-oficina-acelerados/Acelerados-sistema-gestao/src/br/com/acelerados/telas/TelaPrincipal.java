@@ -278,7 +278,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         if(confirma == JOptionPane.YES_OPTION){
             try {
                 //usando a classe jasperPrint
-            JasperPrint print = JasperFillManager.fillReport("C:/reports/clientes.jasper",null,conexao);
+            JasperPrint print = JasperFillManager.fillReport(getClass().getResourceAsStream("/reports/clientes.jasper"),null,conexao);
             
             JasperViewer.viewReport(print,false);
                 
@@ -295,7 +295,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         if(confirma == JOptionPane.YES_OPTION){
             try {
                 //usando a classe jasperPrint
-            JasperPrint print = JasperFillManager.fillReport("C:/reports/servicos.jasper",null,conexao);
+            JasperPrint print = JasperFillManager.fillReport(getClass().getResourceAsStream("/reports/servicos.jasper"),null,conexao);
             
             JasperViewer.viewReport(print,false);
                       
