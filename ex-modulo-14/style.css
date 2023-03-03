@@ -1,0 +1,37 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  color: #FFF;
+}
+
+#header {
+  background-color: rgb(44, 40, 61);
+}
+
+#header .nav .nav-link.active {
+  background-color: #FFF;
+  color: rgb(44, 40, 61);
+}
+
+.nav .nav-link{
+  color: #FFF;
+}
+
+.nav .nav-link:hover {
+  font-weight: bold;
+  color: white;
+}
+
+.carousel-item img {
+  width: 100%;
+  max-height: 700px;
+}
+
+
+
+
+
+
